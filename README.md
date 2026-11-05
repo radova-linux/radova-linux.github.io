@@ -1,2 +1,2 @@
-# radova-linux.github.io
+# Welcome
 homepage of linux radova
