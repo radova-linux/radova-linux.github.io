@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radova Linux — Distribusi Arch Ramping dan Bebas Bloatware</title>
+  <meta name="description" content="Radova Linux adalah distribusi berbasis Arch yang bersih, ringan, dan siap pakai. Dilengkapi installer praktis, jejak memori minimal, dan tanpa telemetri.">
+  <link rel="canonical" href="https://radova.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://radova.org/">
+  <meta property="og:title" content="Radova Linux — Distribusi Arch Ramping">
+  <meta property="og:description" content="Sistem operasi berbasis Arch yang bersih, ringan, dan siap kerja.">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/pico.min.css">
+  <link rel="stylesheet" href="/assets/site.css">
+  <meta name="htmx-config" content='{"allowEval":false,"allowScriptTags":false,"selfRequestsOnly":true,"includeIndicatorStyles":false}'>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- Header: Precision Island Navigation -->
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="site-logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2.5" y="2.5" width="27" height="27" rx="7.5" stroke="currentColor" stroke-width="1.75"/>
+            <path d="M16 8L8.5 22.5h4.25l3.25-6.5 3.25 6.5h4.25L16 8z" fill="currentColor"/>
+            <circle cx="16" cy="19.25" r="1.5" fill="#0a0506"/>
+          </svg>
+        </span>
+        <span class="logo-text">Radova</span>
+        <span class="logo-sub">OS</span>
+      </span>
+
+      <nav class="nav-pill" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#fitur">Fitur</a></li>
+          <li><a href="#mulai">Mulai</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#komunitas">Komunitas</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="{{REPO_URL}}" class="btn-ghost-nav" hx-boost="false" aria-label="Repositori Radova di GitHub">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Repositori</span>
+        </a>
+        <a href="#unduh" class="btn-accent-nav">
+          <span>Unduh</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="heading-hero">
+      <div class="container hero-container">
+
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <h1 id="heading-hero">
+              <span class="h1-line1">Distribusi Arch yang bersih,</span>
+              <span class="h1-line2">ramping, dan siap kerja.</span>
+            </h1>
+            <p class="hero-desc">
+              Radova Linux adalah sistem operasi berbasis Arch yang hadir terkonfigurasi secara esensial &mdash; bebas bloatware, tanpa konfigurasi berbelit. Nyalakan, masuk, dan langsung bekerja.
+            </p>
+            <div class="hero-actions">
+              <a href="#unduh" class="btn-hero-primary" role="button">
+                <span>Unduh Radova Linux</span>
+                <span class="btn-arrow-circle" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </span>
+              </a>
+              <a href="#fitur" class="hero-link-secondary">Lihat fitur</a>
+            </div>
+          </div>
+
+          <figure class="terminal-figure">
+            <span class="terminal-badge">{{BADGE_TEXT}}</span>
+            <div class="terminal-window">
+              <pre><code><span class="t-accent">radova@arch</span>
+<span class="t-line">-----------</span>
+<span class="t-lbl">OS:      </span>Radova Linux x86_64
+<span class="t-lbl">Host:    </span>Generic PC
+<span class="t-lbl">Kernel:  </span>Linux {{KERNEL_VERSION}}
+<span class="t-lbl">Uptime:  </span>{{UPTIME}}
+<span class="t-lbl">Packages:</span>{{PACKAGE_COUNT}} (pacman)
+<span class="t-lbl">Shell:   </span>bash {{SHELL_VERSION}}
+<span class="t-lbl">WM:      </span>Sway (Wayland)
+<span class="t-lbl">Memory:  </span>{{IDLE_RAM}} / 16384MB</code></pre>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upstream Strip -->
+    <div class="upstream-strip">
+      <div class="container upstream-container">
+        <span class="upstream-label">Dibangun di atas</span>
+        <ul class="upstream-list">
+          <li class="upstream-chip">Linux Kernel</li>
+          <li class="upstream-chip">Arch Linux</li>
+          <li class="upstream-chip">systemd</li>
+          <li class="upstream-chip">Wayland</li>
+          <li class="upstream-chip">Pacman</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fitur Bento Grid -->
+    <section id="fitur" class="section-content" data-label="Fitur" aria-labelledby="heading-fitur">
+      <div class="container">
+        <h2 id="heading-fitur" class="heading-two-tone text-center">
+          Arsitektur Ramping, <span class="muted">Performa Penuh Tanpa Beban.</span>
+        </h2>
+
+        <div class="bento-grid">
+          <!-- Card 1 (Span 2) -->
+          <article class="bento-card bento-span-2">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="4"/><path d="m8 10 3 2-3 2"/><path d="M13 14h3"/></svg>
+            </div>
+            <h3>Basis Arch Murni</h3>
+            <p class="card-desc">Dapatkan akses langsung ke repositori Arch dan ribuan paket AUR tanpa konfigurasi yang melelahkan.</p>
+            <div class="mini-ui">
+              <pre><code>pacman -Syu --needed base-devel</code></pre>
+            </div>
+          </article>
+
+          <!-- Card 2 (Span 2) -->
+          <article class="bento-card bento-span-2">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            </div>
+            <h3>Installer Praktis</h3>
+            <p class="card-desc">Panduan instalasi grafis siap pakai dengan penataan partisi otomatis maupun manual dalam hitungan menit.</p>
+            <div class="mini-ui">
+              <dl class="mini-dl">
+                <dt>Waktu Pasang</dt>
+                <dd>~5 Menit</dd>
+                <dt>Partisi</dt>
+                <dd>Btrfs / ext4</dd>
+              </dl>
+            </div>
+          </article>
+
+          <!-- Card 3 (Span 1) -->
+          <article class="bento-card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>
+            </div>
+            <h3>Jejak Memori Minimal</h3>
+            <p class="card-desc">Penggunaan desktop idle sangat hemat, gesit di laptop lawas maupun mesin komputasi baru.</p>
+            <div class="mini-ui">
+              <dl class="mini-dl">
+                <dt>Idle RAM</dt>
+                <dd>&lt; 350 MB</dd>
+              </dl>
+            </div>
+          </article>
+
+          <!-- Card 4 (Span 1) -->
+          <article class="bento-card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>Bebas Telemetri</h3>
+            <p class="card-desc">Privasi mutlak tanpa analitik latar belakang, pelacakan aktivitas, atau pengumpulan data berkas.</p>
+            <div class="mini-ui">
+              <pre><code>telemetry: false</code></pre>
+            </div>
+          </article>
+
+          <!-- Card 5 (Span 2) -->
+          <article class="bento-card bento-span-2">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="6" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9M6 9v6"/></svg>
+            </div>
+            <h3>Manifes Terbuka</h3>
+            <p class="card-desc">Seluruh resep pembuatan citra sistem dan paket tersedia transparan di repositori publik.</p>
+            <div class="mini-ui">
+              <dl class="mini-dl">
+                <dt>Lisensi</dt>
+                <dd>{{LICENSE}}</dd>
+                <dt>Audit</dt>
+                <dd>100% Publik</dd>
+              </dl>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-content" data-label="FAQ" aria-labelledby="heading-faq">
+      <div class="container faq-layout">
+        <div class="faq-intro">
+          <h2 id="heading-faq">Pertanyaan Umum</h2>
+          <p class="text-muted">Jawaban atas pertanyaan yang sering diajukan mengenai sistem operasi Radova Linux.</p>
+        </div>
+
+        <div class="faq-accordion">
+          <details>
+            <summary>Apa basis distribusi Radova Linux?</summary>
+            <p>Radova Linux dibangun langsung di atas basis Arch Linux dengan model rolling release dan kompatibilitas penuh dengan repositori resmi serta AUR.</p>
+          </details>
+
+          <details>
+            <summary>Berapa kebutuhan perangkat keras minimum?</summary>
+            <p>Sistem membutuhkan prosesor x86_64, memori RAM minimal 1 GB (disarankan 2 GB), dan kapasitas penyimpanan sekurang-kurangnya 15 GB.</p>
+          </details>
+
+          <details>
+            <summary>Apakah terdapat telemetri atau pelacakan?</summary>
+            <p>Tidak ada telemetri sama sekali. Radova Linux sepenuhnya transparan tanpa pelacak aktivitas maupun pengumpulan data pribadi.</p>
+          </details>
+
+          <details>
+            <summary>Bagaimana prosedur pembaruan sistem?</summary>
+            <p>Sistem diperbarui menggunakan manajer paket bawaan Arch Linux via perintah terminal: <code>sudo pacman -Syu</code>.</p>
+          </details>
+
+          <details>
+            <summary>Apakah Radova Linux berlisensi bebas dan terbuka?</summary>
+            <p>Ya, Radova Linux dirilis di bawah lisensi {{LICENSE}} dan seluruh konfigurasi dapat diaudit bebas melalui repositori publik.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Band CTA Penutup: FULL LEBAR body -->
+    <section id="mulai-sekarang" class="cta-band">
+      <div class="cta-band-inner">
+        <h2>Coba Radova Linux <span class="chip-version">{{VERSION}}</span> hari ini</h2>
+        <p>Sistem operasi bersih, cepat, dan siap menemani alur kerja harianmu.</p>
+        <a href="#unduh" class="btn-band-cta" role="button">
+          <span>Unduh Sekarang</span>
+          <span class="btn-arrow-circle" aria-hidden="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Komunitas -->
+    <section id="komunitas" class="section-content" data-label="Komunitas" aria-labelledby="heading-komunitas">
+      <div class="container">
+        <h2 id="heading-komunitas">Komunitas &amp; Pengembangan</h2>
+        <p class="text-muted">Radova Linux dikembangkan secara terbuka. Semua orang dipersilakan ikut berpartisipasi.</p>
+        <ul class="community-grid">
+          <li>
+            <a href="{{REPO_URL}}" class="community-card" hx-boost="false">
+              <div class="community-header">
+                <span class="community-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </span>
+                <strong>Repositori sumber kode</strong>
+                <span class="community-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </span>
+              </div>
+              <span class="community-desc">Telusuri kode, resep ISO, manifes build, serta laporkan perbaikan.</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{DOCS_URL}}" class="community-card" hx-boost="false">
+              <div class="community-header">
+                <span class="community-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </span>
+                <strong>Dokumentasi resmi</strong>
+                <span class="community-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </span>
+              </div>
+              <span class="community-desc">Panduan komprehensif pemasangan, pemeliharaan, dan konfigurasi desktop.</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{CONTACT_URL}}" class="community-card" hx-boost="false">
+              <div class="community-header">
+                <span class="community-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </span>
+                <strong>Kontak &amp; laporan isu</strong>
+                <span class="community-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </span>
+              </div>
+              <span class="community-desc">Diskusikan pengembangan dan laporkan kendala teknis kepada tim pengembang.</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        &copy; 2025 Radova Linux &mdash; Dirilis di bawah {{LICENSE}}.
+        Dibangun dengan Pico CSS (MIT) dan htmx (0-BSD).
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/htmx.min.js" defer></script>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>
