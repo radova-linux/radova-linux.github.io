@@ -301,40 +301,8 @@ Memory  {{IDLE_RAM}} / {{TOTAL_RAM}}</code></pre>
           <p class="unduh-action">
             <a href="{{ISO_URL}}" class="btn btn-primary btn-iso-full" hx-boost="false"><!-- REPLACE: ISO download URL --><span>Download ISO Image {{VERSION}} ({{ISO_SIZE}})</span></a>
           </p>
-
-          <table class="iso-table">
-            <caption>Official Release Specifications</caption>
-            <tbody>
-              <tr><th scope="row">Version</th><td><!-- REPLACE: release version -->{{VERSION}}</td></tr>
-              <tr><th scope="row">Release date</th><td><!-- REPLACE: release date -->{{RELEASE_DATE}}</td></tr>
-              <tr><th scope="row">Base</th><td>Arch Linux</td></tr>
-              <tr><th scope="row">Architecture</th><td><!-- REPLACE: architecture -->{{ARCH}}</td></tr>
-              <tr><th scope="row">ISO size</th><td><!-- REPLACE: ISO size -->{{ISO_SIZE}}</td></tr>
-              <tr><th scope="row">License</th><td><!-- REPLACE: license -->{{LICENSE}}</td></tr>
-            </tbody>
-          </table>
-
-          <p class="unduh-sig-note">SHA256: <code><!-- REPLACE: short SHA256 -->{{SHA256_SHORT}}</code> · <a href="{{SIG_URL}}" hx-boost="false"><!-- REPLACE: signature URL -->Signature (.sig)</a></p>
         </article>
 
-        <article class="unduh-card">
-          <p class="eyebrow">Security &amp; Integrity</p>
-          <h3>Verify your download</h3>
-
-          <div class="code-box">
-            <pre><code><!-- REPLACE: full SHA256 checksum -->{{SHA256}}</code></pre>
-          </div>
-
-          <div class="code-box">
-            <pre><code>sha256sum -c radova-{{VERSION}}-{{ARCH}}.iso.sha256</code></pre>
-          </div>
-
-          <ol class="verify-steps">
-            <li>Download the ISO image along with its checksum and <code>.sig</code> signature file.</li>
-            <li>Run <code>sha256sum -c</code> in your terminal to verify image authenticity.</li>
-            <li>Flash to a USB drive using <code>dd</code> or an ISO writer, boot, and follow the installer.</li>
-          </ol>
-        </article>
       </div>
     </section>
 
