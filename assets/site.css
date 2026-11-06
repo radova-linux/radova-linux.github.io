@@ -585,52 +585,1245 @@ a.btn, button.btn, .copy-btn {
   50% { transform: scale(1.35); opacity: 0.65; }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .hero-spec-strip,
-  .hero-split-left,
+/* Baris 2: Monumental Asymmetric Editorial Split */
+.hero-split {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 56rem) {
+  .hero-split {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+
+  .hero-split-left {
+    grid-column: 1 / 8;
+  }
+
   .hero-split-right {
-    opacity: 0;
-    transform: translateY(14px);
-    animation: heroIn 600ms cubic-bezier(.2,.7,.2,1) forwards;
-  }
-  .hero-spec-strip { animation-delay: 0ms; }
-  .hero-split-left { animation-delay: 80ms; }
-  .hero-split-right { animation-delay: 160ms; }
-
-  .hero-workbench {
-    opacity: 0;
-    transform: scale(0.95);
-    animation: mockupIn 900ms cubic-bezier(.2,.7,.2,1) 240ms forwards;
-  }
-
-  @keyframes heroIn {
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes mockupIn {
-    to { opacity: 1; transform: scale(1); }
+    grid-column: 8 / 13;
+    border-left: 2px solid var(--red-600);
+    padding-left: clamp(1.5rem, 2.5vw, 2.5rem);
   }
 }
+
+.hero-split-left h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+  margin: 0;
 }
 
-.js .reveal:not(.is-in) {
-  opacity: 0;
-  transform: translateY(20px);
+.hero-split-left h1 span {
+  color: var(--red-600);
 }
 
-.js .reveal {
-  transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1);
-  transition-delay: calc(var(--i, 0) * 70ms);
+.hero-lead {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 2rem;
 }
 
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+/* Baris 3: Overlapping Workbench Stage */
+.hero-workbench {
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid rgba(14, 3, 71, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(14, 3, 71, 0.08);
+  padding: 1.5rem;
+}
+
+.hero-workbench::before {
+  content: attr(data-waybar);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--lavender);
+  border: 1px solid rgba(14, 3, 71, 0.08);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.workbench-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 52rem) {
+  .workbench-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 0;
+    align-items: center;
+  }
+
+  .workbench-deck {
+    transform: translateX(-2rem) translateY(-0.75rem);
+    z-index: 2;
+  }
+}
+
+.workbench-term {
+  background: #090229;
+  border-top: 2px solid var(--red-500);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 16px 40px rgba(9, 2, 41, 0.35);
+}
+
+.workbench-term pre {
+  margin: 0;
+}
+
+.workbench-term code {
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.workbench-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main #hero .hero-workbench article.deck-item,
+.deck-item {
+  background: rgba(255, 255, 255, 0.94);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(14, 3, 71, 0.12);
+  border-radius: 14px;
+  padding: 1.15rem 1.5rem;
+  box-shadow: 0 8px 24px rgba(14, 3, 71, 0.06);
+  margin: 0;
+}
+
+.deck-item h4 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+
+.deck-val {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+
+.deck-val span {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   Section 3: Manifesto ("The Swiss Editorial Ledger")
+   ========================================================================== */
+#manifesto {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--line);
+  padding-block: clamp(5rem, 9vw, 7.5rem);
+}
+
+#manifesto::before {
+  margin-bottom: 3rem;
+}
+
+.manifesto-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (min-width: 56rem) {
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+
+  .manifesto-col-left {
+    grid-column: 1 / 6;
+    align-self: start;
+    position: sticky;
+    top: 6.5rem;
+  }
+
+  .manifesto-col-right {
+    grid-column: 6 / 13;
+  }
+}
+
+.manifesto-col-left {
+  border-top: 3px solid var(--navy);
+  padding-top: 1.5rem;
+}
+
+.manifesto-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--red-600);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.manifesto-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4.4vw, 3.75rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+  margin: 0;
+}
+
+.manifesto-title span {
+  display: block;
+  color: var(--red-600);
+  margin-top: 0.15em;
+}
+
+.manifesto-title::after {
+  content: "PHILOSOPHY // ZERO-BLOAT ARCHITECTURE";
+  display: block;
+  margin-top: 2rem;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.manifesto-lead {
+  font-family: "Lato", var(--font-heading);
+  font-size: clamp(1.375rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.38;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.015em;
+}
+
+.manifesto-deep {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 3rem;
+  max-width: 62ch;
+}
+
+/* Swiss Hairline Ledger (Grid 2x2) */
+.swiss-ledger {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 2px solid var(--navy);
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 42rem) {
+  .swiss-ledger {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+main #manifesto .swiss-ledger article.ledger-item,
+.ledger-item {
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  padding: 1.75rem 1.5rem 1.75rem 0;
+  position: relative;
+}
+
+@media (max-width: 41.99rem) {
+  main #manifesto .swiss-ledger article.ledger-item:not(:first-child),
+  .ledger-item:not(:first-child) {
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (min-width: 42rem) {
+  main #manifesto .swiss-ledger article.ledger-item:nth-child(2n),
+  .ledger-item:nth-child(2n) {
+    border-left: 1px solid var(--line);
+    padding-left: 1.75rem;
+    padding-right: 0;
+  }
+  main #manifesto .swiss-ledger article.ledger-item:nth-child(n+3),
+  .ledger-item:nth-child(n+3) {
+    border-top: 1px solid var(--line);
+  }
+}
+
+.ledger-item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.ledger-item h3::before {
+  content: attr(data-index);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--red-600);
+  display: block;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+.ledger-item:nth-child(1) h3::before { content: "01 /"; }
+.ledger-item:nth-child(2) h3::before { content: "02 /"; }
+.ledger-item:nth-child(3) h3::before { content: "03 /"; }
+.ledger-item:nth-child(4) h3::before { content: "04 /"; }
+
+.ledger-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+  text-align: left;
+}
+
+.manifesto-quote {
+  margin-top: 2.5rem;
+  background: var(--lavender);
+  border-left: 4px solid var(--red-600);
+  padding: 1.5rem 2rem;
+  border-radius: 0 16px 16px 0;
+}
+
+.manifesto-quote p {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.manifesto-quote cite {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   Section 4: Fitur ("The Interlocking Architectural Matrix")
+   ========================================================================== */
+#fitur {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  padding-block: clamp(5rem, 9vw, 7.5rem);
+}
+
+.fitur-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.fitur-head h2 {
+  margin: 0;
+  text-align: left;
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+.fitur-head-meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.fitur-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+main #fitur .fitur-matrix article.fitur-card {
+  margin: 0;
+}
+
+@media (min-width: 56rem) {
+  .fitur-matrix {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  /* KARTU A: COMMAND MONOLITH (Span 5 Kolom, 2 Baris Penuh) */
+  .card-monolith {
+    grid-column: 1 / 6;
+    grid-row: 1 / 3;
+  }
+
+  /* KARTU B, C, D, E: Asymmetric Interlocking Brick */
+  .card-b {
+    grid-column: 6 / 10;
+    grid-row: 1 / 2;
+  }
+
+  .card-c {
+    grid-column: 10 / 13;
+    grid-row: 1 / 2;
+  }
+
+  .card-d {
+    grid-column: 6 / 9;
+    grid-row: 2 / 3;
+  }
+
+  .card-e {
+    grid-column: 9 / 13;
+    grid-row: 2 / 3;
+  }
+}
+
+/* Kartu A: The Command Monolith */
+.card-monolith {
+  background:
+    radial-gradient(80% 60% at 90% 10%, rgba(255, 0, 0, 0.55), rgba(219, 0, 15, 0.18) 45%, transparent 75%),
+    var(--navy-gradient);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(14, 3, 71, 0.22);
+}
+
+.monolith-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.monolith-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--red-600);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.monolith-icon::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: var(--white);
+  -webkit-mask: var(--ic-stack) center / contain no-repeat;
+  mask: var(--ic-stack) center / contain no-repeat;
+}
+
+.monolith-index {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.25);
+  line-height: 1;
+  user-select: none;
+}
+
+.monolith-body {
+  margin-block: 2rem;
+}
+
+.monolith-body h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 2.6vw, 2.35rem);
+  font-weight: 900;
+  color: var(--white);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  line-height: 1.15;
+}
+
+.monolith-body p {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: rgba(247, 246, 255, 0.82);
+  margin: 0;
+}
+
+.monolith-dock code {
+  background: rgba(9, 2, 41, 0.75);
+  border: 1px solid rgba(255, 0, 0, 0.45);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.monolith-dock code::after {
+  content: "[ ROLLING ]";
+  color: var(--red-500);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Kartu B, C, D, E: The Asymmetric Spec-Board */
+.spec-card-interlock {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid rgba(14, 3, 71, 0.12);
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+@media (hover: hover) {
+  .spec-card-interlock:hover {
+    border-color: var(--red-600);
+    box-shadow: 0 10px 30px rgba(14, 3, 71, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .spec-card-interlock:hover .card-dock {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .spec-card-interlock:hover .card-dock dt,
+  .spec-card-interlock:hover .card-dock dd,
+  .spec-card-interlock:hover .card-dock code {
+    color: var(--white);
+  }
+}
+
+.card-zone-body {
+  padding: 1.75rem 1.75rem 1.25rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-index-pill {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red-900);
+  background: rgba(219, 0, 15, 0.08);
+  padding: 0.25rem 0.6rem;
+  border-radius: 99px;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  line-height: 1.2;
+}
+
+.card-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(14, 3, 71, 0.05);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.icon-phosphor {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-color: var(--navy);
+}
+
+.icon-lightning {
+  -webkit-mask: var(--ic-lightning) center / contain no-repeat;
+  mask: var(--ic-lightning) center / contain no-repeat;
+}
+
+.icon-feather {
+  -webkit-mask: var(--ic-feather) center / contain no-repeat;
+  mask: var(--ic-feather) center / contain no-repeat;
+}
+
+.icon-git-branch {
+  -webkit-mask: var(--ic-git-branch) center / contain no-repeat;
+  mask: var(--ic-git-branch) center / contain no-repeat;
+}
+
+.icon-arrows-clockwise {
+  -webkit-mask: var(--ic-arrows-clockwise) center / contain no-repeat;
+  mask: var(--ic-arrows-clockwise) center / contain no-repeat;
+}
+
+.icon-cpu {
+  -webkit-mask: var(--ic-cpu) center / contain no-repeat;
+  mask: var(--ic-cpu) center / contain no-repeat;
+}
+
+.icon-memory {
+  -webkit-mask: var(--ic-memory) center / contain no-repeat;
+  mask: var(--ic-memory) center / contain no-repeat;
+}
+
+.icon-hard-drives {
+  -webkit-mask: var(--ic-hard-drives) center / contain no-repeat;
+  mask: var(--ic-hard-drives) center / contain no-repeat;
+}
+
+.icon-monitor {
+  -webkit-mask: var(--ic-monitor) center / contain no-repeat;
+  mask: var(--ic-monitor) center / contain no-repeat;
+}
+
+.card-zone-body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.card-zone-body p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+.card-dock {
+  background: #F0EFFC;
+  border-top: 1px solid rgba(14, 3, 71, 0.08);
+  padding: 0.85rem 1.75rem;
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--navy);
+  width: 100%;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.card-dock code {
+  display: block;
+  font-size: 13px;
+  overflow-x: auto;
+  white-space: nowrap;
+  color: inherit;
+}
+
+.card-dock .mini-ui {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card-dock .mini-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-dock dt {
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-dock dd {
+  color: inherit;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Section 5: Arsitektur
+   ========================================================================== */
+#arsitektur {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--line);
+  padding-block: clamp(5rem, 9vw, 7.5rem);
+}
+
+@media (min-width: 56rem) {
+  #arsitektur {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+
+  .arch-intro {
+    grid-column: 1 / 6;
+    position: sticky;
+    top: 6.5rem;
+  }
+
+  .arch-dl {
+    grid-column: 6 / 13;
+  }
+}
+
+.arch-intro h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--navy);
+  margin-bottom: 1.25rem;
+}
+
+.arch-intro h2 span {
+  color: var(--red-600);
+}
+
+.arch-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.arch-chip-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--red-900);
+  margin-bottom: 0.75rem;
+}
+
+.arch-chips {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.arch-chips li {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  background: var(--lavender);
+  border: 1px solid rgba(14, 3, 71, 0.1);
+  border-radius: 999px;
+  color: var(--navy);
+}
+
+.arch-dl {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid var(--navy);
+  border-bottom: 1px solid var(--line);
+}
+
+.arch-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.15rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.arch-row:last-child {
+  border-bottom: 0;
+}
+
+.arch-row dt {
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.arch-row dd {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Section 6: Spesifikasi
+   ========================================================================== */
+#spesifikasi {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--line);
+  padding-block: clamp(5rem, 9vw, 7.5rem);
+}
+
+.section-center {
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+
+.section-center span {
+  color: var(--red-600);
+}
+
+.section-lead {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 65ch;
+  margin-bottom: 3.5rem;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 40rem) {
+  .specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 60rem) {
+  .specs-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.spec-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(14, 3, 71, 0.12);
+  border-radius: 18px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.spec-card::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(14, 3, 71, 0.05);
+  margin-bottom: 1.25rem;
+  -webkit-mask: var(--ic-cpu) center / 22px 22px no-repeat;
+  mask: var(--ic-cpu) center / 22px 22px no-repeat;
+  background-color: var(--navy);
+}
+
+.spec-card[data-icon="cpu"]::before {
+  -webkit-mask-image: var(--ic-cpu);
+  mask-image: var(--ic-cpu);
+}
+.spec-card[data-icon="memory"]::before {
+  -webkit-mask-image: var(--ic-memory);
+  mask-image: var(--ic-memory);
+}
+.spec-card[data-icon="hard-drives"]::before {
+  -webkit-mask-image: var(--ic-hard-drives);
+  mask-image: var(--ic-hard-drives);
+}
+.spec-card[data-icon="monitor"]::before {
+  -webkit-mask-image: var(--ic-monitor);
+  mask-image: var(--ic-monitor);
+}
+
+.spec-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.spec-val {
+  font-size: 14px;
+  color: var(--red-900);
+  font-family: var(--font-mono);
+  margin-bottom: 0.75rem;
+}
+
+.spec-card p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.spec-card .mini-ui {
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 12px;
+}
+
+.spec-card .mini-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-card dt {
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.spec-card dd {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Section 7: Unduh
+   ========================================================================== */
+#unduh {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--line);
+  padding-block: clamp(5rem, 9vw, 7.5rem);
+}
+
+.unduh-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 56rem) {
+  .unduh-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.unduh-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(14, 3, 71, 0.12);
+  border-radius: 20px;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.unduh-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+
+.unduh-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.unduh-action {
+  margin-bottom: 2rem;
+}
+
+.iso-table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+}
+
+.iso-table caption {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.iso-table th,
+.iso-table td {
+  padding: 0.65rem 0;
+  font-size: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.iso-table th {
+  font-family: var(--font-mono);
+  color: var(--muted);
+  font-weight: 500;
+  text-align: left;
+  width: 40%;
+}
+
+.iso-table td {
+  font-family: var(--font-mono);
+  color: var(--navy);
+  font-weight: 700;
+  text-align: right;
+}
+
+.unduh-sig-note {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: auto;
+}
+
+.code-box {
+  position: relative;
+  background: #090229;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(14, 3, 71, 0.15);
+}
+
+.code-box pre {
+  margin: 0;
+  padding-right: 4.5rem;
+}
+
+.code-box code {
+  color: #FFFFFF;
+  font-size: 13.5px;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  height: 32px;
+  padding-inline: 0.85rem;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 200ms ease;
+}
+
+.copy-btn:hover {
+  background: var(--red-600);
+  border-color: var(--red-600);
+}
+
+.copy-btn.is-copied {
+  background: #00A86B;
+  border-color: #00A86B;
+}
+
+.verify-steps {
+  margin-top: 1.5rem;
+  counter-reset: verify-counter;
+}
+
+.verify-steps li {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.verify-steps li::before {
+  counter-increment: verify-counter;
+  content: counter(verify-counter) ".";
+  position: absolute;
+  left: 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--red-600);
+}
+
+/* ==========================================================================
+   Section 8: Mulai Sekarang (CTA Band)
+   ========================================================================== */
+#mulai-sekarang {
+  background: var(--navy-gradient);
+  padding-block: clamp(5rem, 8vw, 7rem);
+  text-align: center;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#mulai-sekarang h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.cta-lead {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: rgba(247, 246, 255, 0.85);
+  max-width: 55ch;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+.cta-btn-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.cta-sublink {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  margin: 0;
+}
+
+.cta-sublink a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: underline;
+}
+
+.cta-sublink a:hover {
+  color: var(--white);
+}
+
+/* ==========================================================================
+   Section 9: Footer
+   ========================================================================== */
+.site-footer {
+  background: var(--navy);
+  padding-block: 3.5rem 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .site-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.footer-copy {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Motion & Animation
+   ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
   main > section {
     scroll-margin-top: 0;
-  }
-  .js .reveal:not(.is-in) {
-    opacity: 1;
-    transform: none;
   }
 }

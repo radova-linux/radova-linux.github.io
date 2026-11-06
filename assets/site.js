@@ -7,9 +7,7 @@
     document.documentElement.classList.add("js");
 
     var groups = [
-      document.querySelectorAll(".pillar-item"),
       document.querySelectorAll(".fitur-card"),
-      document.querySelectorAll(".arch-row"),
       document.querySelectorAll(".spec-card"),
       document.querySelectorAll(".unduh-card")
     ];
@@ -22,14 +20,6 @@
       }
     }
 
-    var singles = document.querySelectorAll("section h2, section .lead, .manifesto-lead");
-    for (var s = 0; s < singles.length; s++) {
-      if (!singles[s].closest(".hero")) {
-        singles[s].classList.add("reveal");
-        singles[s].style.setProperty("--i", "0");
-      }
-    }
-
     var observer = new IntersectionObserver(function (entries, obs) {
       for (var e = 0; e < entries.length; e++) {
         if (entries[e].isIntersecting) {
@@ -38,15 +28,15 @@
         }
       }
     }, {
-      threshold: 0.15,
-      rootMargin: "0px 0px -10% 0px"
+      threshold: 0.01,
+      rootMargin: "0px 0px 120px 0px"
     });
 
     var reveals = document.querySelectorAll(".reveal");
     var vh = window.innerHeight || document.documentElement.clientHeight;
     for (var r = 0; r < reveals.length; r++) {
       var rect = reveals[r].getBoundingClientRect();
-      if (rect.top < vh && rect.bottom > 0) {
+      if (rect.top < vh + 120) {
         reveals[r].classList.add("is-in");
       } else {
         observer.observe(reveals[r]);
@@ -64,16 +54,16 @@
         var btn = document.createElement("button");
         btn.type = "button";
         btn.className = "copy-btn";
-        btn.textContent = "Salin";
-        btn.setAttribute("aria-label", "Salin kode ke papan klip");
+        btn.textContent = "Copy";
+        btn.setAttribute("aria-label", "Copy code to clipboard");
 
         btn.addEventListener("click", function () {
           var text = (pre.textContent || "").trim();
           navigator.clipboard.writeText(text).then(function () {
-            btn.textContent = "Tersalin";
+            btn.textContent = "Copied";
             btn.classList.add("is-copied");
             setTimeout(function () {
-              btn.textContent = "Salin";
+              btn.textContent = "Copy";
               btn.classList.remove("is-copied");
             }, 1800);
           });

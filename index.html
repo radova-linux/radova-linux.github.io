@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="light">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <title>Radova Linux — Distribusi Arch yang bersih, ramping, dan siap kerja</title>
-  <meta name="description" content="Radova Linux adalah sistem operasi berbasis Arch yang hadir terkonfigurasi secara esensial — bebas bloatware, tanpa konfigurasi berbelit.">
+  <title>Radova Linux — Pure Arch performance, refined for daily craft.</title>
+  <meta name="description" content="Radova Linux is a thoughtfully crafted Arch-based operating system — stripped of bloat, tuned with sensible defaults, and ready the moment you boot.">
   <link rel="canonical" href="https://radova.org/">
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/lato-latin-900.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-latin-wght.woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/assets/pico.min.css">
-  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/site.css?v=2">
   <meta name="htmx-config" content='{"allowEval":false,"allowScriptTags":false,"selfRequestsOnly":true,"includeIndicatorStyles":false}'>
 </head>
 <body>
 
-  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <span class="brand-lockup">
-      <svg class="brand-mark" role="img" aria-label="Logo Radova Linux" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28" fill="none">
+      <svg class="brand-mark" role="img" aria-label="Radova Linux Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28" fill="none">
         <rect width="28" height="28" rx="6" fill="#DB000F"/>
         <path d="M14 6L7.5 20h3.8l2.7-5.8 2.7 5.8h3.8L14 6z" fill="#FFFFFF"/>
         <circle cx="14" cy="17.5" r="1.5" fill="#0E0347"/>
@@ -28,17 +28,17 @@
       <span class="brand-name">RADOVA</span>
     </span>
 
-    <nav aria-label="Navigasi utama">
+    <nav aria-label="Primary navigation">
       <ul class="nav-list">
-        <li><a href="#fitur">Fitur</a></li>
-        <li><a href="#arsitektur">Arsitektur</a></li>
-        <li><a href="#spesifikasi">Spesifikasi</a></li>
-        <li><a href="{{REPO_URL}}" hx-boost="false"><!-- GANTI: URL repositori -->Repositori</a></li>
+        <li><a href="#fitur">Features</a></li>
+        <li><a href="#arsitektur">Architecture</a></li>
+        <li><a href="#spesifikasi">Specs</a></li>
+        <li><a href="{{REPO_URL}}" hx-boost="false"><!-- REPLACE: repository URL -->Repository</a></li>
       </ul>
     </nav>
 
     <div class="header-cta">
-      <a href="#unduh" class="btn btn-sm btn-navy">Cek Rilis</a>
+      <a href="#unduh" class="btn btn-sm btn-navy">Get Release</a>
     </div>
   </header>
 
@@ -51,211 +51,278 @@
 
       <div class="hero-split">
         <div class="hero-split-left">
-          <h1 id="hero-title">Distribusi Arch yang bersih, <span>ramping, dan siap kerja.</span></h1>
+          <h1 id="hero-title">Where is the shell, <span>there is the way.</span></h1>
         </div>
 
         <div class="hero-split-right">
-          <p class="lead hero-lead">Radova Linux adalah sistem operasi berbasis Arch yang hadir terkonfigurasi secara esensial — bebas bloatware, tanpa konfigurasi berbelit. Nyalakan, masuk, dan langsung bekerja.</p>
+          <p class="lead hero-lead">Radova Linux gives you the raw speed of Arch without the weekend-long setup. Stripped of bloat and tuned with sensible defaults — just boot, sign in, and start building.</p>
 
           <p class="hero-actions">
-            <a href="#unduh" class="btn btn-lg btn-primary btn-arrow">Unduh Radova Linux</a>
-            <a href="#fitur" class="btn btn-lg btn-outline">Lihat fitur</a>
+            <a href="#unduh" class="btn btn-lg btn-primary btn-arrow">Get Radova Linux</a>
+            <a href="#fitur" class="btn btn-lg btn-outline">Explore features</a>
           </p>
         </div>
       </div>
+
+      <!-- Baris 3: Overlapping Workbench Stage -->
+      <figure class="hero-workbench" data-waybar="radova@live   ~   waybar   ·   cpu 1.2%   ·   mem {{IDLE_RAM}} / {{TOTAL_RAM}}   ·   bat 100%   ·   13:37">
+        <div class="workbench-grid">
+          <div class="workbench-term">
+            <pre><code>radova@live
+-----------
+OS      Radova Linux {{ARCH}}
+Base    Arch Linux
+Kernel  {{KERNEL}}
+Desktop {{DESKTOP}}
+Shell   {{SHELL}}
+Memory  {{IDLE_RAM}} / {{TOTAL_RAM}}</code></pre>
+          </div>
+
+          <div class="workbench-deck">
+            <article class="deck-item">
+              <h4>Idle Memory Footprint</h4>
+              <p class="deck-val">{{IDLE_RAM}} <span>of {{TOTAL_RAM}}</span></p>
+            </article>
+            <article class="deck-item">
+              <h4>Architecture &amp; Init</h4>
+              <p class="deck-val">{{ARCH}} <span>· {{INIT_SYSTEM}} · {{FILESYSTEM}}</span></p>
+            </article>
+            <article class="deck-item">
+              <h4>Packages &amp; Privacy</h4>
+              <p class="deck-val">{{PACKAGE_MANAGER}} <span>· Zero Telemetry</span></p>
+            </article>
+          </div>
+        </div>
+      </figure>
     </section>
 
     <section id="manifesto" data-label="Manifesto" aria-labelledby="manifesto-title">
-      <div class="manifesto-head">
-        <p class="eyebrow">Kenapa Memilih Radova Linux?</p>
-        <h2 id="manifesto-title">Sistem operasi yang tahu <span>kapan harus menyingkir.</span></h2>
-      </div>
-
-      <div class="manifesto-content">
-        <p class="manifesto-lead">Kebanyakan distribusi modern memaksakan ratusan layanan latar belakang, telemetri tersembunyi, dan antarmuka berat yang menguras memori bahkan sebelum kamu membuka satu aplikasi pun.</p>
-        <p class="manifesto-body">Radova Linux mengambil jalur berbeda. Dibangun untuk performa puncak tanpa beban aplikasi latar belakang yang sia-sia. Kami merakit fondasi Arch Linux murni dengan konfigurasi esensial yang siap pakai sejak boot pertama — mesin tetap dingin, responsif, dan hemat baterai sepanjang hari.</p>
-
-        <div class="manifesto-pillars">
-          <article class="pillar-item">
-            <h3>Konsumsi Daya &amp; Memori Rendah</h3>
-            <p>Penggunaan memori saat menganggur hanya <!-- GANTI: idle RAM -->{{IDLE_RAM}}. Mesin tetap dingin dan responsif.</p>
-          </article>
-          <article class="pillar-item">
-            <h3>Bebas Telemetri Mutlak</h3>
-            <p>Privasi penuh tanpa analitik latar belakang, pelacakan aktivitas, atau pengumpulan data.</p>
-          </article>
-          <article class="pillar-item">
-            <h3>Ekosistem Paket Tanpa Batas</h3>
-            <p>Didukung <!-- GANTI: manajer paket -->{{PACKAGE_MANAGER}} dengan akses instan ke pustaka resmi Arch dan AUR.</p>
-          </article>
-          <article class="pillar-item">
-            <h3>Kendali Estetika Penuh</h3>
-            <p>Perpaduan window manager <!-- GANTI: window manager -->{{WM}} dan lingkungan <!-- GANTI: lingkungan desktop -->{{DESKTOP}} yang fleksibel diatur.</p>
-          </article>
+      <div class="manifesto-grid">
+        <div class="manifesto-col-left">
+          <p class="eyebrow manifesto-eyebrow">Why Radova Linux?</p>
+          <h2 id="manifesto-title" class="manifesto-title">An operating system that knows <span>when to step aside.</span></h2>
         </div>
 
-        <blockquote class="manifesto-quote">
-          <p>"Sistem operasi yang mengutamakan kecepatan, kesederhanaan, dan kebebasan mutlak bagi penggunanya." — Tim Pengembang Radova Linux</p>
-        </blockquote>
+        <div class="manifesto-col-right">
+          <p class="manifesto-lead">Most modern distributions ship with hundreds of background daemons, silent telemetry, and heavy shells that drain your resources before you even open a single window.</p>
+          <p class="manifesto-deep">Radova Linux takes a quieter path. Engineered for sustained peak performance without the background noise, it pairs a pure Arch Linux foundation with a clean, cohesive desktop right out of the box — keeping your machine cool, responsive, and effortless on both vintage laptops and modern workstations.</p>
+
+          <div class="swiss-ledger">
+            <article class="ledger-item" data-index="01 /">
+              <h3>Featherlight Footprint</h3>
+              <p>Idles at just <!-- REPLACE: idle RAM -->{{IDLE_RAM}}. Your hardware stays cool, quiet, and dedicated to your actual workload.</p>
+            </article>
+            <article class="ledger-item" data-index="02 /">
+              <h3>Zero Telemetry, Ever</h3>
+              <p>Absolute privacy by default. No background analytics, no usage tracking, and no silent data collection.</p>
+            </article>
+            <article class="ledger-item" data-index="03 /">
+              <h3>Boundless Package Ecosystem</h3>
+              <p>Powered by <!-- REPLACE: package manager -->{{PACKAGE_MANAGER}} with instant access to official Arch repositories and the AUR.</p>
+            </article>
+            <article class="ledger-item" data-index="04 /">
+              <h3>Tailored Aesthetics</h3>
+              <p>A seamless blend of <!-- REPLACE: window manager -->{{WM}} and <!-- REPLACE: desktop environment -->{{DESKTOP}}, ready to adapt to the way you work.</p>
+            </article>
+          </div>
+
+          <blockquote class="manifesto-quote">
+            <p>"We built the system we wanted to use every day — fast, unopinionated where it matters, and completely out of your way."</p>
+            <cite>— The Radova Linux Team</cite>
+          </blockquote>
+        </div>
       </div>
     </section>
 
-    <section id="fitur" data-label="Fitur" aria-labelledby="fitur-title">
-      <h2 id="fitur-title" class="section-center">Ramping di dalam, <span>siap pakai di luar.</span></h2>
+    <section id="fitur" data-label="Features" aria-labelledby="fitur-title">
+      <div class="fitur-head">
+        <h2 id="fitur-title">Lean under the hood, <span>effortless on the surface.</span></h2>
+        <p class="fitur-head-meta">5 CORE PILLARS // ESSENTIAL ARCHITECTURE</p>
+      </div>
 
-      <div class="fitur-deck">
-        <article class="fitur-card fitur-monolith" data-icon="stack">
-          <div class="monolith-top">
-            <h3>Basis Arch Linux Murni</h3>
-            <p>Dibangun langsung di atas fondasi rilis bergulir Arch Linux: paket perangkat lunak paling mutakhir dan akses langsung ke repositori resmi Arch serta ribuan paket komunitas AUR tanpa konfigurasi yang melelahkan.</p>
+      <div class="fitur-matrix">
+        <!-- KARTU A: THE COMMAND MONOLITH (Span 5 Kolom Kiri, 2 Baris Penuh) -->
+        <article class="fitur-card card-monolith">
+          <div class="monolith-top-bar">
+            <span class="monolith-icon" aria-hidden="true"></span>
+            <span class="monolith-index" aria-hidden="true">01</span>
           </div>
-          <div class="monolith-terminal">
-            <code>pacman -Syu --needed base-devel</code>
+          <div class="monolith-body">
+            <h3>Pure Arch Foundation</h3>
+            <p>Built directly on Arch Linux for bleeding-edge packages and seamless access to both official repositories and the AUR.</p>
+          </div>
+          <div class="monolith-dock">
+            <code>pacman -Syu</code>
           </div>
         </article>
 
-        <div class="fitur-matrix">
-          <article class="fitur-card fitur-sub" data-index="02" data-icon="lightning">
-            <h3>Siap Pakai &amp; I/O Cepat</h3>
-            <p>Terkonfigurasi sejak awal. Instal, masuk, dan langsung bekerja tanpa konfigurasi berbelit.</p>
+        <!-- KARTU B: 4 Kolom Baris 1 Kanan -->
+        <article class="fitur-card spec-card-interlock card-b" data-index="02">
+          <div class="card-zone-body">
+            <span class="card-index-pill" aria-hidden="true">02</span>
+            <span class="card-icon-wrap"><span class="icon-phosphor icon-lightning" aria-hidden="true"></span></span>
+            <h3>Ready from First Boot</h3>
+            <p>Thoughtfully pre-configured from day one. Install, log in, and get straight to work without wrestling with dotfiles.</p>
+          </div>
+          <div class="card-dock">
             <dl class="mini-ui">
-              <div class="mini-row"><dt>Filesystem</dt><dd><!-- GANTI: filesystem -->{{FILESYSTEM}}</dd></div>
-              <div class="mini-row"><dt>Init</dt><dd><!-- GANTI: init system -->{{INIT_SYSTEM}}</dd></div>
+              <div class="mini-row"><dt>Filesystem</dt><dd><!-- REPLACE: filesystem -->{{FILESYSTEM}}</dd></div>
+              <div class="mini-row"><dt>Init</dt><dd><!-- REPLACE: init system -->{{INIT_SYSTEM}}</dd></div>
             </dl>
-          </article>
+          </div>
+        </article>
 
-          <article class="fitur-card fitur-sub fitur-stagger" data-index="03" data-icon="feather">
-            <h3>Tanpa Bloatware</h3>
-            <p>Hanya komponen esensial yang terpasang di awal, sehingga sistem terasa ringan, dingin, dan rapi.</p>
+        <!-- KARTU C: 3 Kolom Baris 1 Kanan -->
+        <article class="fitur-card spec-card-interlock card-c" data-index="03">
+          <div class="card-zone-body">
+            <span class="card-index-pill" aria-hidden="true">03</span>
+            <span class="card-icon-wrap"><span class="icon-phosphor icon-feather" aria-hidden="true"></span></span>
+            <h3>Strictly Bloat-Free</h3>
+            <p>Only essential core components are installed upfront, keeping your system crisp, predictable, and clutter-free.</p>
+          </div>
+          <div class="card-dock">
             <dl class="mini-ui">
-              <div class="mini-row"><dt>Idle RAM</dt><dd><!-- GANTI: idle RAM -->{{IDLE_RAM}}</dd></div>
+              <div class="mini-row"><dt>Idle RAM</dt><dd><!-- REPLACE: idle RAM -->{{IDLE_RAM}}</dd></div>
             </dl>
-          </article>
+          </div>
+        </article>
 
-          <article class="fitur-card fitur-sub" data-index="04" data-icon="git-branch">
-            <h3>Manifes Terbuka</h3>
-            <p>Konfigurasi dan resep pembuatan sistem tersedia transparan di repositori publik.</p>
-            <div class="mini-ui">
-              <code>git clone <!-- GANTI: URL repositori -->{{REPO_URL}}</code>
-            </div>
-          </article>
+        <!-- KARTU D: 3 Kolom Baris 2 Kanan -->
+        <article class="fitur-card spec-card-interlock card-d" data-index="04">
+          <div class="card-zone-body">
+            <span class="card-index-pill" aria-hidden="true">04</span>
+            <span class="card-icon-wrap"><span class="icon-phosphor icon-git-branch" aria-hidden="true"></span></span>
+            <h3>Open by Design</h3>
+            <p>Every configuration file, build script, and ISO profile lives openly in our public repository for full auditability.</p>
+          </div>
+          <div class="card-dock">
+            <code>git clone <!-- REPLACE: repository URL -->{{REPO_URL}}</code>
+          </div>
+        </article>
 
-          <article class="fitur-card fitur-sub fitur-stagger" data-index="05" data-icon="arrows-clockwise">
-            <h3>Selalu Mutakhir</h3>
-            <p>Pembaruan rilis bergulir lewat pacman menjaga sistem tetap terbaru tanpa perlu instal ulang.</p>
+        <!-- KARTU E: 4 Kolom Baris 2 Kanan -->
+        <article class="fitur-card spec-card-interlock card-e" data-index="05">
+          <div class="card-zone-body">
+            <span class="card-index-pill" aria-hidden="true">05</span>
+            <span class="card-icon-wrap"><span class="icon-phosphor icon-arrows-clockwise" aria-hidden="true"></span></span>
+            <h3>Always Current</h3>
+            <p>A rolling-release model via pacman keeps your kernel, drivers, and tools continuously up to date — install once, update forever.</p>
+          </div>
+          <div class="card-dock">
             <dl class="mini-ui">
-              <div class="mini-row"><dt>Telemetri</dt><dd>0 (Off)</dd></div>
-              <div class="mini-row"><dt>Model</dt><dd>Rolling</dd></div>
+              <div class="mini-row"><dt>Telemetry</dt><dd>0 (Off)</dd></div>
+              <div class="mini-row"><dt>Release</dt><dd>Rolling</dd></div>
             </dl>
-          </article>
-        </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="arsitektur" data-label="Arsitektur" aria-labelledby="arsitektur-title">
+    <section id="arsitektur" data-label="Architecture" aria-labelledby="arsitektur-title">
       <div class="arch-intro">
-        <h2 id="arsitektur-title">Fondasi sistem, <span>didesain untuk ketahanan.</span></h2>
-        <p class="arch-text">Radova Linux memadukan kernel Linux modern dengan basis Arch Linux. Komponen inti ditata ringkas agar sistem tetap cepat dan mudah dipelihara.</p>
-        <p class="arch-chip-label">Dibangun di atas</p>
+        <h2 id="arsitektur-title">System foundation, <span>engineered for endurance.</span></h2>
+        <p class="arch-text">Radova Linux pairs a modern Linux kernel with a streamlined Arch base. Core components are kept deliberately minimal so your system stays fast, predictable, and easy to maintain.</p>
+        <p class="arch-chip-label">Built upon</p>
         <ul class="arch-chips">
           <li>Linux Kernel</li>
           <li>Arch Linux</li>
-          <li><!-- GANTI: komponen upstream -->{{UPSTREAM_1}}</li>
+          <li><!-- REPLACE: upstream component -->{{UPSTREAM_1}}</li>
         </ul>
       </div>
 
       <dl class="arch-dl">
-        <div class="arch-row"><dt>Kernel</dt><dd><!-- GANTI: versi kernel -->{{KERNEL}}</dd></div>
-        <div class="arch-row"><dt>Basis</dt><dd>Arch Linux</dd></div>
-        <div class="arch-row"><dt>Init</dt><dd><!-- GANTI: init system -->{{INIT_SYSTEM}}</dd></div>
-        <div class="arch-row"><dt>Window manager</dt><dd><!-- GANTI: window manager -->{{WM}}</dd></div>
-        <div class="arch-row"><dt>Filesystem</dt><dd><!-- GANTI: filesystem -->{{FILESYSTEM}}</dd></div>
-        <div class="arch-row"><dt>Paket</dt><dd><!-- GANTI: manajer paket -->{{PACKAGE_MANAGER}}</dd></div>
-        <div class="arch-row"><dt>Arsitektur</dt><dd><!-- GANTI: arsitektur -->{{ARCH}}</dd></div>
+        <div class="arch-row"><dt>Kernel</dt><dd><!-- REPLACE: kernel version -->{{KERNEL}}</dd></div>
+        <div class="arch-row"><dt>Base</dt><dd>Arch Linux</dd></div>
+        <div class="arch-row"><dt>Init</dt><dd><!-- REPLACE: init system -->{{INIT_SYSTEM}}</dd></div>
+        <div class="arch-row"><dt>Window manager</dt><dd><!-- REPLACE: window manager -->{{WM}}</dd></div>
+        <div class="arch-row"><dt>Filesystem</dt><dd><!-- REPLACE: filesystem -->{{FILESYSTEM}}</dd></div>
+        <div class="arch-row"><dt>Package manager</dt><dd><!-- REPLACE: package manager -->{{PACKAGE_MANAGER}}</dd></div>
+        <div class="arch-row"><dt>Shell</dt><dd><!-- REPLACE: default shell -->{{SHELL}}</dd></div>
+        <div class="arch-row"><dt>Architecture</dt><dd><!-- REPLACE: architecture -->{{ARCH}}</dd></div>
       </dl>
     </section>
 
-    <section id="spesifikasi" data-label="Spesifikasi" aria-labelledby="spesifikasi-title">
-      <h2 id="spesifikasi-title" class="section-center">Kebutuhan perangkat keras, <span>ringan di segala mesin.</span></h2>
-      <p class="lead section-lead">Tidak perlu perangkat baru. Radova Linux dirancang agar berjalan mulus di laptop lama maupun PC kerja modern.</p>
+    <section id="spesifikasi" data-label="Specifications" aria-labelledby="spesifikasi-title">
+      <h2 id="spesifikasi-title" class="section-center">Hardware requirements, <span>light on any machine.</span></h2>
+      <p class="lead section-lead">No flagship hardware required. Radova Linux runs effortlessly on aging ThinkPads and high-end workstations alike.</p>
 
       <div class="specs-grid">
         <article class="spec-card" data-icon="cpu">
-          <h3>Prosesor (CPU)</h3>
+          <h3>Processor (CPU)</h3>
           <p class="spec-val"><strong>x86_64 Dual-Core 1.5 GHz</strong></p>
-          <p>Mendukung instruksi 64-bit standar (Intel Core generasi lawas atau AMD setara).</p>
+          <p>Supports standard 64-bit instruction sets across legacy Intel Core and AMD processors.</p>
           <dl class="mini-ui">
-            <div class="mini-row"><dt>Minimum</dt><dd>2 Core</dd></div>
-            <div class="mini-row"><dt>Rekomendasi</dt><dd>4 Core+</dd></div>
+            <div class="mini-row"><dt>Minimum</dt><dd>2 Cores</dd></div>
+            <div class="mini-row"><dt>Recommended</dt><dd>4 Cores+</dd></div>
           </dl>
         </article>
 
         <article class="spec-card" data-icon="memory">
-          <h3>Memori (RAM)</h3>
-          <p class="spec-val"><strong>1 GB RAM</strong> (Minimum Boot &amp; Kerja Ringan)</p>
-          <p>Konsumsi idle hanya <!-- GANTI: idle RAM -->{{IDLE_RAM}}, menyisakan ruang lega untuk peramban dan editor kode.</p>
+          <h3>Memory (RAM)</h3>
+          <p class="spec-val"><strong>1 GB RAM</strong> (Boot &amp; Light Workflow)</p>
+          <p>Consumes just <!-- REPLACE: idle RAM -->{{IDLE_RAM}} of <!-- REPLACE: total RAM -->{{TOTAL_RAM}} at idle, leaving plenty of headroom for your browser and code editor.</p>
           <dl class="mini-ui">
             <div class="mini-row"><dt>Minimum</dt><dd>1 GB</dd></div>
-            <div class="mini-row"><dt>Rekomendasi</dt><dd>4 GB+</dd></div>
+            <div class="mini-row"><dt>Recommended</dt><dd>4 GB+</dd></div>
           </dl>
         </article>
 
         <article class="spec-card" data-icon="hard-drives">
-          <h3>Penyimpanan (Storage)</h3>
-          <p class="spec-val"><strong>10 GB Ruang Kosong</strong></p>
-          <p>Instalasi dasar sangat ramping. Mendukung penuh filesystem <!-- GANTI: filesystem -->{{FILESYSTEM}} dan enkripsi disk.</p>
+          <h3>Storage</h3>
+          <p class="spec-val"><strong>10 GB Available Space</strong></p>
+          <p>A remarkably compact base install with full support for <!-- REPLACE: filesystem -->{{FILESYSTEM}} and full-disk encryption.</p>
           <dl class="mini-ui">
             <div class="mini-row"><dt>Minimum</dt><dd>10 GB</dd></div>
-            <div class="mini-row"><dt>Rekomendasi</dt><dd>25 GB SSD</dd></div>
+            <div class="mini-row"><dt>Recommended</dt><dd>25 GB SSD</dd></div>
           </dl>
         </article>
 
         <article class="spec-card" data-icon="monitor">
-          <h3>Layar &amp; Grafis (GPU)</h3>
-          <p class="spec-val"><strong>Resolusi 1024×768</strong></p>
-          <p>GPU terintegrasi (Intel HD / AMD Radeon / VirtIO/QXL untuk VM) dengan dukungan Wayland/X11.</p>
+          <h3>Display &amp; Graphics</h3>
+          <p class="spec-val"><strong>1024×768 Resolution</strong></p>
+          <p>Works seamlessly with integrated GPUs (Intel HD, AMD Radeon) and virtualized displays (VirtIO/QXL).</p>
           <dl class="mini-ui">
             <div class="mini-row"><dt>Minimum</dt><dd>iGPU / VM</dd></div>
-            <div class="mini-row"><dt>Rekomendasi</dt><dd>1080p+</dd></div>
+            <div class="mini-row"><dt>Recommended</dt><dd>1080p+</dd></div>
           </dl>
         </article>
       </div>
     </section>
 
-    <section id="unduh" data-label="Unduh" aria-labelledby="unduh-title">
-      <h2 id="unduh-title" class="section-center">Unduh Radova Linux, <span>mulai hari ini.</span></h2>
+    <section id="unduh" data-label="Download" aria-labelledby="unduh-title">
+      <h2 id="unduh-title" class="section-center">Download Radova Linux, <span>start building today.</span></h2>
 
       <div class="unduh-grid">
         <article class="unduh-card">
-          <p class="eyebrow">Rilis Resmi Siap Pakai</p>
-          <h3>Citra ISO <!-- GANTI: versi rilis -->{{VERSION}}</h3>
-          <p class="unduh-desc">Cocok untuk penggunaan harian di laptop, workstation, maupun mesin virtual.</p>
+          <p class="eyebrow">Official Live &amp; Install Media</p>
+          <h3>ISO Image <!-- REPLACE: release version -->{{VERSION}}</h3>
+          <p class="unduh-desc">Ready for daily use on laptops, desktop workstations, or virtual machines.</p>
 
           <p class="unduh-action">
-            <a href="{{ISO_URL}}" class="btn btn-primary btn-iso-full" hx-boost="false"><!-- GANTI: URL unduhan ISO --><span>Unduh Citra ISO {{VERSION}} ({{ISO_SIZE}})</span></a>
+            <a href="{{ISO_URL}}" class="btn btn-primary btn-iso-full" hx-boost="false"><!-- REPLACE: ISO download URL --><span>Download ISO Image {{VERSION}} ({{ISO_SIZE}})</span></a>
           </p>
 
           <table class="iso-table">
-            <caption>Spesifikasi Rilis Resmi</caption>
+            <caption>Official Release Specifications</caption>
             <tbody>
-              <tr><th scope="row">Versi</th><td><!-- GANTI: versi rilis -->{{VERSION}}</td></tr>
-              <tr><th scope="row">Tanggal rilis</th><td><!-- GANTI: tanggal rilis -->{{RELEASE_DATE}}</td></tr>
-              <tr><th scope="row">Basis</th><td>Arch Linux</td></tr>
-              <tr><th scope="row">Arsitektur</th><td><!-- GANTI: arsitektur -->{{ARCH}}</td></tr>
-              <tr><th scope="row">Ukuran ISO</th><td><!-- GANTI: ukuran ISO -->{{ISO_SIZE}}</td></tr>
-              <tr><th scope="row">Lisensi</th><td><!-- GANTI: lisensi -->{{LICENSE}}</td></tr>
+              <tr><th scope="row">Version</th><td><!-- REPLACE: release version -->{{VERSION}}</td></tr>
+              <tr><th scope="row">Release date</th><td><!-- REPLACE: release date -->{{RELEASE_DATE}}</td></tr>
+              <tr><th scope="row">Base</th><td>Arch Linux</td></tr>
+              <tr><th scope="row">Architecture</th><td><!-- REPLACE: architecture -->{{ARCH}}</td></tr>
+              <tr><th scope="row">ISO size</th><td><!-- REPLACE: ISO size -->{{ISO_SIZE}}</td></tr>
+              <tr><th scope="row">License</th><td><!-- REPLACE: license -->{{LICENSE}}</td></tr>
             </tbody>
           </table>
 
-          <p class="unduh-sig-note">SHA256: <code><!-- GANTI: ringkasan SHA256 -->{{SHA256_SHORT}}</code> · <a href="{{SIG_URL}}" hx-boost="false"><!-- GANTI: URL signature -->Signature (.sig)</a></p>
+          <p class="unduh-sig-note">SHA256: <code><!-- REPLACE: short SHA256 -->{{SHA256_SHORT}}</code> · <a href="{{SIG_URL}}" hx-boost="false"><!-- REPLACE: signature URL -->Signature (.sig)</a></p>
         </article>
 
         <article class="unduh-card">
-          <p class="eyebrow">Keamanan &amp; Integritas</p>
-          <h3>Verifikasi unduhan</h3>
+          <p class="eyebrow">Security &amp; Integrity</p>
+          <h3>Verify your download</h3>
 
           <div class="code-box">
-            <pre><code><!-- GANTI: checksum SHA256 penuh -->{{SHA256}}</code></pre>
+            <pre><code><!-- REPLACE: full SHA256 checksum -->{{SHA256}}</code></pre>
           </div>
 
           <div class="code-box">
@@ -263,31 +330,30 @@
           </div>
 
           <ol class="verify-steps">
-            <li>Unduh berkas ISO beserta file checksum dan signature <code>.sig</code>.</li>
-            <li>Jalankan <code>sha256sum -c</code> di terminal untuk memastikan keaslian citra.</li>
-            <li>Tulis ke USB dengan <code>dd</code> atau pembakar ISO, boot, dan mulai instalasi.</li>
+            <li>Download the ISO image along with its checksum and <code>.sig</code> signature file.</li>
+            <li>Run <code>sha256sum -c</code> in your terminal to verify image authenticity.</li>
+            <li>Flash to a USB drive using <code>dd</code> or an ISO writer, boot, and follow the installer.</li>
           </ol>
         </article>
       </div>
     </section>
 
     <section id="mulai-sekarang" aria-labelledby="cta-title">
-      <h2 id="cta-title">Coba Radova Linux hari ini</h2>
-      <p class="lead cta-lead">Sistem operasi bersih, cepat, dan siap menemani alur kerjamu.</p>
+      <h2 id="cta-title">Take Radova Linux for a spin</h2>
+      <p class="lead cta-lead">A clean, fast operating system crafted to stay out of your way and elevate your daily workflow.</p>
       <p class="cta-btn-wrap">
-        <a href="{{DOCS_URL}}" class="btn btn-white btn-lg btn-arrow-red" hx-boost="false"><!-- GANTI: URL dokumentasi -->Baca Panduan Instalasi</a>
+        <a href="{{DOCS_URL}}" class="btn btn-white btn-lg btn-arrow-red" hx-boost="false"><!-- REPLACE: documentation URL -->Read Installation Guide</a>
       </p>
       <p class="cta-sublink">
-        <a href="{{REPO_URL}}" hx-boost="false"><!-- GANTI: URL repositori -->Lihat Kode Sumber di Repositori</a>
+        <a href="{{REPO_URL}}" hx-boost="false"><!-- REPLACE: repository URL -->Explore the Source Code on Repository</a>
       </p>
-      <!-- OPSIONAL: Jika {{FORM_ENDPOINT}} diisi, aktifkan form dengan <label for="cta-email">Email untuk kabar rilis</label>, <input id="cta-email" type="email" name="email" required autocomplete="email">, dan tombol navy "Kabari saya" -->
     </section>
 
   </main>
 
   <footer class="site-footer">
     <span class="brand-lockup brand-lockup-light">
-      <svg class="brand-mark" role="img" aria-label="Logo Radova Linux" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28" fill="none">
+      <svg class="brand-mark" role="img" aria-label="Radova Linux Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28" fill="none">
         <rect width="28" height="28" rx="6" fill="#DB000F"/>
         <path d="M14 6L7.5 20h3.8l2.7-5.8 2.7 5.8h3.8L14 6z" fill="#FFFFFF"/>
         <circle cx="14" cy="17.5" r="1.5" fill="#0E0347"/>
@@ -296,15 +362,15 @@
     </span>
 
     <ul class="footer-links">
-      <li><a href="{{REPO_URL}}" hx-boost="false">Repositori</a></li>
-      <li><a href="{{DOCS_URL}}" hx-boost="false">Dokumentasi</a></li>
-      <li><a href="{{CONTACT_URL}}" hx-boost="false"><!-- GANTI: URL kontak -->Kontak</a></li>
+      <li><a href="{{REPO_URL}}" hx-boost="false">Repository</a></li>
+      <li><a href="{{DOCS_URL}}" hx-boost="false">Documentation</a></li>
+      <li><a href="{{CONTACT_URL}}" hx-boost="false"><!-- REPLACE: contact URL -->Contact</a></li>
     </ul>
 
-    <p class="footer-copy">© 2026 Radova Linux · Lisensi <!-- GANTI: lisensi -->{{LICENSE}} · Dibangun dengan Pico CSS (MIT) dan htmx.</p>
+    <p class="footer-copy">© 2026 Radova Linux · Released under the <!-- REPLACE: license -->{{LICENSE}} License · Built with Pico CSS (MIT) and htmx.</p>
   </footer>
 
   <script src="/assets/htmx.min.js" defer></script>
-  <script src="/assets/site.js" defer></script>
+  <script src="/assets/site.js?v=2" defer></script>
 </body>
 </html>
