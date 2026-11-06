@@ -242,6 +242,7 @@ a:hover {
 }
 
 .site-header,
+main > section,
 .site-footer {
   width: 100%;
   padding-inline: var(--pad-x);
