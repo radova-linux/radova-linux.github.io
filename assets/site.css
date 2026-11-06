@@ -1913,7 +1913,7 @@ main #fitur .fitur-matrix article.fitur-card {
 .cta-lead {
   font-size: 1.25rem;
   line-height: 1.6;
-  color: var(--red-5002);
+  color: rgba(247, 246, 255, 0.9);
   max-width: 55ch;
   margin-inline: auto;
   margin-bottom: 2.5rem;

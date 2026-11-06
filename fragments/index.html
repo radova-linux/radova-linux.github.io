@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>[DEV] Radova Linux — Showcase Institusi Informasi</title>
+  <meta name="description" content="Development environment for Radova Linux and Information Institutions Showcase.">
+
+  <!-- Google Fonts (Development) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Pico CSS via CDN untuk Development -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+  <!-- Custom CSS Lokal (Relative Path tanpa cache string) -->
+  <link rel="stylesheet" href="./css/style.css">
+<!-- ... existing code ... -->
+        <!-- 4 Kartu Foto Miring & Tumpang Tindih (HTMX Triggers - Relative Path untuk Dev) -->
+        <div class="inst-showcase__deck" role="list">
+          <!-- 1. Arsip -->
+          <article class="inst-card inst-card--arsip" role="listitem">
+            <button type="button"
+                    class="inst-card__trigger"
+                    hx-get="./fragments/arsip.html"
+                    hx-target="#inst-modal-body"
+                    hx-swap="innerHTML"
+                    data-inst-trigger="arsip"
+                    aria-haspopup="dialog"
+                    aria-controls="inst-history-modal"
+                    aria-label="Baca sejarah dan tonggak perkembangan Arsip">
+              <span class="inst-card__badge">01 / Pillar of Memory</span>
+              <figure class="inst-card__figure">
+                <img src="./img/arsip.jpg" alt="Koleksi dokumen sejarah dan rekod otentik di dalam ruang penyimpanan arsip" class="inst-card__img" loading="lazy">
+                <figcaption class="inst-card__caption">
+                  <strong class="inst-card__name">Arsip</strong>
+                  <span class="inst-card__sub">Authentic Records</span>
+                </figcaption>
+              </figure>
+            </button>
+          </article>
+
+          <!-- 2. Perpustakaan -->
+          <article class="inst-card inst-card--perpustakaan" role="listitem">
+            <button type="button"
+                    class="inst-card__trigger"
+                    hx-get="./fragments/perpustakaan.html"
+                    hx-target="#inst-modal-body"
+                    hx-swap="innerHTML"
+                    data-inst-trigger="perpustakaan"
+                    aria-haspopup="dialog"
+                    aria-controls="inst-history-modal"
+                    aria-label="Baca sejarah dan tonggak perkembangan Perpustakaan">
+              <span class="inst-card__badge">02 / Universal Access</span>
+              <figure class="inst-card__figure">
+                <img src="./img/perpustakaan.jpg" alt="Rak koleksi literatur dan ruang baca di perpustakaan" class="inst-card__img" loading="lazy">
+                <figcaption class="inst-card__caption">
+                  <strong class="inst-card__name">Perpustakaan</strong>
+                  <span class="inst-card__sub">Curated Knowledge</span>
+                </figcaption>
+              </figure>
+            </button>
+          </article>
+
+          <!-- 3. Museum -->
+          <article class="inst-card inst-card--museum" role="listitem">
+            <button type="button"
+                    class="inst-card__trigger"
+                    hx-get="./fragments/museum.html"
+                    hx-target="#inst-modal-body"
+                    hx-swap="innerHTML"
+                    data-inst-trigger="museum"
+                    aria-haspopup="dialog"
+                    aria-controls="inst-history-modal"
+                    aria-label="Baca sejarah dan tonggak perkembangan Museum">
+              <span class="inst-card__badge">03 / Material Culture</span>
+              <figure class="inst-card__figure">
+                <img src="./img/museum.jpg" alt="Pameran artefak bersejarah di galeri museum" class="inst-card__img" loading="lazy">
+                <figcaption class="inst-card__caption">
+                  <strong class="inst-card__name">Museum</strong>
+                  <span class="inst-card__sub">Living Artifacts</span>
+                </figcaption>
+              </figure>
+            </button>
+          </article>
+
+          <!-- 4. Digital Asset Management (DAM) -->
+          <article class="inst-card inst-card--dam" role="listitem">
+            <button type="button"
+                    class="inst-card__trigger"
+                    hx-get="./fragments/dam.html"
+                    hx-target="#inst-modal-body"
+                    hx-swap="innerHTML"
+                    data-inst-trigger="dam"
+                    aria-haspopup="dialog"
+                    aria-controls="inst-history-modal"
+                    aria-label="Baca sejarah dan tonggak perkembangan Digital Asset Management">
+              <span class="inst-card__badge">04 / Modern Taxonomy</span>
+              <figure class="inst-card__figure">
+                <img src="./img/dam.jpg" alt="Antarmuka manajemen aset digital dan repositori metadata" class="inst-card__img" loading="lazy">
+                <figcaption class="inst-card__caption">
+                  <strong class="inst-card__name">DAM</strong>
+                  <span class="inst-card__sub">Digital Asset Mgmt</span>
+                </figcaption>
+              </figure>
+            </button>
+          </article>
+        </div>
+<!-- ... existing code ... -->
+    <p class="footer-copy">© 2026 Radova Linux · Released under the <!-- REPLACE: license -->{{LICENSE}} License · Built with Pico CSS (MIT) and htmx.</p>
+  </footer>
+
+  <!-- HTMX via CDN & Native JS Lokal untuk Development -->
+  <script src="https://unpkg.com/htmx.org@1.9.12" defer></script>
+  <script src="./js/main.js" defer></script>
+</body>
+</html>
