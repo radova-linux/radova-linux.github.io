@@ -49,7 +49,7 @@
   --white: #FFFFFF;
   --muted: #5b5a78;
   --line: rgba(14, 3, 71, 0.10);
-  --navy-900-gradient: linear-gradient(135deg, #0E0347 0%, #0E0347 55%, #0B2E8D 130%);
+  --navy-gradient: linear-gradient(135deg, #0E0347 0%, #0E0347 55%, #0B2E8D 130%);
 
   --pico-font-family: var(--font-body);
   --pico-color: #0E0347;
