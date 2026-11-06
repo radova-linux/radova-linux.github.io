@@ -780,50 +780,50 @@ main #hero .hero-workbench article.deck-item,
 }
 
 /* ==========================================================================
-   Section 3: Manifesto ("The Swiss Editorial Ledger")
+   Section 3: statement ("The Swiss Editorial Ledger")
    ========================================================================== */
-#manifesto {
+#statement {
   background: #FFFFFF;
   border-bottom: 1px solid var(--line);
   padding-block: clamp(5rem, 9vw, 7.5rem);
 }
 
-#manifesto::before {
+#statement::before {
   margin-bottom: 3rem;
 }
 
-.manifesto-grid {
+.statement-grid {
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
 @media (min-width: 56rem) {
-  .manifesto-grid {
+  .statement-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: clamp(2rem, 5vw, 4rem);
     align-items: start;
   }
 
-  .manifesto-col-left {
+  .statement-col-left {
     grid-column: 1 / 6;
     align-self: start;
     position: sticky;
     top: 6.5rem;
   }
 
-  .manifesto-col-right {
+  .statement-col-right {
     grid-column: 6 / 13;
   }
 }
 
-.manifesto-col-left {
+.statement-col-left {
   border-top: 3px solid var(--red-900);
   padding-top: 1.5rem;
 }
 
-.manifesto-eyebrow {
+.statement-eyebrow {
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 700;
@@ -833,7 +833,7 @@ main #hero .hero-workbench article.deck-item,
   margin-bottom: 1rem;
 }
 
-.manifesto-title {
+.statement-title {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 4.4vw, 3.75rem);
   font-weight: 900;
@@ -843,13 +843,13 @@ main #hero .hero-workbench article.deck-item,
   margin: 0;
 }
 
-.manifesto-title span {
+.statement-title span {
   display: block;
   color: var(--red-600);
   margin-top: 0.15em;
 }
 
-.manifesto-title::after {
+.statement-title::after {
   content: "PHILOSOPHY // ZERO-BLOAT ARCHITECTURE";
   display: block;
   margin-top: 2rem;
@@ -862,7 +862,7 @@ main #hero .hero-workbench article.deck-item,
   border-top: 1px solid var(--line);
 }
 
-.manifesto-lead {
+.statement-lead {
   font-family: "Lato", var(--font-heading);
   font-size: clamp(1.375rem, 2.2vw, 1.75rem);
   font-weight: 700;
@@ -872,7 +872,7 @@ main #hero .hero-workbench article.deck-item,
   letter-spacing: -0.015em;
 }
 
-.manifesto-deep {
+.statement-deep {
   font-size: 1.125rem;
   line-height: 1.75;
   color: var(--muted);
@@ -894,7 +894,7 @@ main #hero .hero-workbench article.deck-item,
   }
 }
 
-main #manifesto .swiss-ledger article.ledger-item,
+main #statement .swiss-ledger article.ledger-item,
 .ledger-item {
   margin: 0;
   border-radius: 0;
@@ -906,20 +906,20 @@ main #manifesto .swiss-ledger article.ledger-item,
 }
 
 @media (max-width: 41.99rem) {
-  main #manifesto .swiss-ledger article.ledger-item:not(:first-child),
+  main #statement .swiss-ledger article.ledger-item:not(:first-child),
   .ledger-item:not(:first-child) {
     border-top: 1px solid var(--line);
   }
 }
 
 @media (min-width: 42rem) {
-  main #manifesto .swiss-ledger article.ledger-item:nth-child(2n),
+  main #statement .swiss-ledger article.ledger-item:nth-child(2n),
   .ledger-item:nth-child(2n) {
     border-left: 1px solid var(--line);
     padding-left: 1.75rem;
     padding-right: 0;
   }
-  main #manifesto .swiss-ledger article.ledger-item:nth-child(n+3),
+  main #statement .swiss-ledger article.ledger-item:nth-child(n+3),
   .ledger-item:nth-child(n+3) {
     border-top: 1px solid var(--line);
   }
@@ -958,7 +958,7 @@ main #manifesto .swiss-ledger article.ledger-item,
   text-align: left;
 }
 
-.manifesto-quote {
+.statement-quote {
   margin-top: 2.5rem;
   background: var(--lavender);
   border-left: 4px solid var(--red-600);
@@ -966,7 +966,7 @@ main #manifesto .swiss-ledger article.ledger-item,
   border-radius: 0 16px 16px 0;
 }
 
-.manifesto-quote p {
+.statement-quote p {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
@@ -976,7 +976,7 @@ main #manifesto .swiss-ledger article.ledger-item,
   margin-bottom: 0.5rem;
 }
 
-.manifesto-quote cite {
+.statement-quote cite {
   display: block;
   font-family: var(--font-body);
   font-size: 0.95rem;
