@@ -496,7 +496,7 @@ a.btn, button.btn, .copy-btn {
 
 /* Satu-satunya Tombol Unduh File ISO (#unduh) */
 .btn-iso-full {
-  width: 100%;
+  width: 50%;
   height: 56px;
   padding-inline: 1.5rem 0.625rem;
   justify-content: space-between;
@@ -521,7 +521,7 @@ a.btn, button.btn, .copy-btn {
 .btn-arrow:hover::after,
 .btn-arrow-red:hover::after,
 .btn-iso-full:hover::after {
-  transform: translateX(2px);
+  transform: translateX(10px);
 }
 
 /* Section 2: Hero ("The Radova Workbench") */
@@ -1041,7 +1041,7 @@ main #fitur .fitur-matrix article.fitur-card {
 .card-monolith {
   background:
     radial-gradient(80% 60% at 90% 10%, rgba(255, 0, 0, 0.55), rgba(219, 0, 15, 0.18) 45%, transparent 75%),
-    var(--red-900-gradient);
+    var(--navy-gradient);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 24px;
   padding: 2.25rem;
