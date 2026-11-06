@@ -494,33 +494,67 @@ a.btn, button.btn, .copy-btn {
   background: var(--red-600) var(--ic-arrow-white) center / 18px 18px no-repeat;
 }
 
-/* Satu-satunya Tombol Unduh File ISO (#unduh) */
+/* Satu-satunya Tombol Unduh File ISO (#unduh) - Island Button Architecture */
 .btn-iso-full {
-  width: 50%;
-  height: 56px;
-  padding-inline: 1.5rem 0.625rem;
+  display: inline-flex;
+  align-items: center;
   justify-content: space-between;
-  font-size: 16px;
+  gap: 1.5rem;
+  min-height: 60px;
+  padding: 0.45rem 0.55rem 0.45rem 2rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--red-600) 0%, var(--red-700) 100%);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16.5px;
   font-weight: 700;
-  gap: 0.75rem;
-  white-space: normal;
-  text-align: left;
+  letter-spacing: 0.01em;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 1px 2px rgba(161, 0, 0, 0.2),
+    0 8px 24px -4px rgba(219, 0, 15, 0.35);
+  transition:
+    transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 350ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-iso-full:hover {
+  background: linear-gradient(135deg, var(--red-500) 0%, var(--red-600) 100%);
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.4) inset,
+    0 14px 34px -4px rgba(219, 0, 15, 0.5);
+  color: var(--white);
+}
+
+.btn-iso-full:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 12px -2px rgba(219, 0, 15, 0.35);
 }
 
 .btn-iso-full::after {
   content: "";
-  display: inline-block;
-  width: 36px;
-  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   flex-shrink: 0;
   background: var(--white) var(--ic-download-red) center / 20px 20px no-repeat;
-  transition: transform 200ms cubic-bezier(.2,.7,.2,1);
+  box-shadow: 0 2px 6px rgba(14, 3, 71, 0.12);
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-iso-full:hover::after {
+  transform: translateY(2px) scale(1.06);
 }
 
 .btn-arrow:hover::after,
-.btn-arrow-red:hover::after,
-.btn-iso-full:hover::after {
+.btn-arrow-red:hover::after {
   transform: translateX(10px);
 }
 
@@ -1556,53 +1590,188 @@ main #fitur .fitur-matrix article.fitur-card {
 }
 
 /* ==========================================================================
-   Section 7: Unduh
+   Section 7: Unduh ("The Machined Distribution Console")
    ========================================================================== */
 #unduh {
-  background: #FFFFFF;
+  position: relative;
+  background:
+    radial-gradient(50% 45% at 50% 15%, rgba(219, 0, 15, 0.04), transparent 70%),
+    radial-gradient(40% 50% at 85% 85%, rgba(14, 3, 71, 0.03), transparent 70%),
+    #FFFFFF;
   border-bottom: 1px solid var(--line);
-  padding-block: clamp(5rem, 9vw, 7.5rem);
+  padding-block: clamp(5rem, 9vw, 8rem);
+  overflow: hidden;
+}
+
+#unduh .section-center {
+  margin-bottom: 1.25rem;
 }
 
 .unduh-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  width: 100%;
 }
 
-@media (min-width: 56rem) {
-  .unduh-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+/* Double-Bezel Hardware Architecture */
 .unduh-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(14, 3, 71, 0.12);
-  border-radius: 20px;
-  padding: 2.25rem;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  max-width: 54rem;
+  background:
+    radial-gradient(120% 120% at 90% 10%, rgba(219, 0, 15, 0.04) 0%, transparent 60%),
+    radial-gradient(100% 100% at 10% 90%, rgba(14, 3, 71, 0.02) 0%, transparent 50%),
+    #FFFFFF;
+  border: 1px solid rgba(14, 3, 71, 0.09);
+  border-radius: clamp(24px, 3.5vw, 36px);
+  padding: clamp(2rem, 5vw, 3.75rem);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
+    0 1px 3px rgba(14, 3, 71, 0.03),
+    0 20px 50px -15px rgba(14, 3, 71, 0.06),
+    0 32px 70px -25px rgba(219, 0, 15, 0.05);
   display: flex;
   flex-direction: column;
+  transition:
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Inner Machined Bezel / Concentric Highlight Rail */
+.unduh-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(219, 0, 15, 0.28) 0%, rgba(14, 3, 71, 0.08) 40%, rgba(14, 3, 71, 0.02) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Architectural Spec Watermark */
+.unduh-card::after {
+  content: "STABLE // x86_64";
+  position: absolute;
+  top: clamp(1.75rem, 4vw, 2.75rem);
+  right: clamp(1.75rem, 4vw, 2.75rem);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  background: rgba(14, 3, 71, 0.04);
+  border: 1px solid rgba(14, 3, 71, 0.08);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+.unduh-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(219, 0, 15, 0.24);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 1) inset,
+    0 2px 6px rgba(14, 3, 71, 0.04),
+    0 30px 70px -15px rgba(14, 3, 71, 0.10),
+    0 45px 95px -25px rgba(219, 0, 15, 0.09);
+}
+
+/* Micro-Aesthetic Eyebrow Badge */
+.unduh-card .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: fit-content;
+  padding: 0.35rem 0.85rem;
+  background: rgba(219, 0, 15, 0.06);
+  border: 1px solid rgba(219, 0, 15, 0.16);
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red-900);
+  margin-bottom: 1.25rem;
+}
+
+.unduh-card .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red-600);
+  box-shadow: 0 0 0 3px rgba(219, 0, 15, 0.2);
+  animation: chipPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Monumental ISO Headline */
 .unduh-card h3 {
   font-family: var(--font-heading);
-  font-size: 1.75rem;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
   font-weight: 900;
-  color: var(--red-900);
-  margin-bottom: 0.75rem;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--navy);
+  margin-bottom: 1rem;
 }
 
+/* Refined Editorial Description */
 .unduh-desc {
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.65;
   color: var(--muted);
-  margin-bottom: 2rem;
+  max-width: 44ch;
+  margin-bottom: 0;
 }
 
+/* Action Shelf & Live Architecture Ledger */
 .unduh-action {
-  margin-bottom: 2rem;
+  margin-top: clamp(2rem, 4vw, 3.25rem);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 0;
+}
+
+.unduh-action::after {
+  content: "Universal Image // UEFI & BIOS Boot // Built with mkarchiso";
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 48rem) {
+  .unduh-card::after {
+    display: none;
+  }
+  .unduh-action {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-iso-full {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .unduh-action::after {
+    text-align: center;
+    font-size: 11.5px;
+  }
 }
 
 .iso-table {
@@ -1744,7 +1913,7 @@ main #fitur .fitur-matrix article.fitur-card {
 .cta-lead {
   font-size: 1.25rem;
   line-height: 1.6;
-  color: rgba(247, 246, 255, 0.85);
+  color: var(--red-5002);
   max-width: 55ch;
   margin-inline: auto;
   margin-bottom: 2.5rem;
