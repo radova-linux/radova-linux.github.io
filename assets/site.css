@@ -321,8 +321,8 @@ section[data-label]::after {
 
 .brand-name {
   font-family: var(--font-heading);
-  font-weight: 900;
-  font-size: 1.25rem;
+  font-weight: 400;
+  font-size: 1rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--red-900);
