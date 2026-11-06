@@ -322,6 +322,7 @@ section[data-label]::after {
 .brand-name {
   font-family: var(--font-heading);
   font-weight: 900;
+  font-size: 0.8rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--red-900);
@@ -781,48 +782,48 @@ main #hero .hero-workbench article.deck-item,
 /* ==========================================================================
    Section 3: Manifesto ("The Swiss Editorial Ledger")
    ========================================================================== */
-#Manifesto {
+#manifesto {
   background: #FFFFFF;
   border-bottom: 1px solid var(--line);
   padding-block: clamp(5rem, 9vw, 7.5rem);
 }
 
-#Manifesto::before {
+#manifesto::before {
   margin-bottom: 3rem;
 }
 
-.Manifesto-grid {
+.manifesto-grid {
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
 @media (min-width: 56rem) {
-  .Manifesto-grid {
+  .manifesto-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: clamp(2rem, 5vw, 4rem);
     align-items: start;
   }
 
-  .Manifesto-col-left {
+  .manifesto-col-left {
     grid-column: 1 / 6;
     align-self: start;
     position: sticky;
     top: 6.5rem;
   }
 
-  .Manifesto-col-right {
+  .manifesto-col-right {
     grid-column: 6 / 13;
   }
 }
 
-.Manifesto-col-left {
+.manifesto-col-left {
   border-top: 3px solid var(--red-900);
   padding-top: 1.5rem;
 }
 
-.Manifesto-eyebrow {
+.manifesto-eyebrow {
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 700;
@@ -832,7 +833,7 @@ main #hero .hero-workbench article.deck-item,
   margin-bottom: 1rem;
 }
 
-.Manifesto-title {
+.manifesto-title {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 4.4vw, 3.75rem);
   font-weight: 900;
@@ -842,13 +843,13 @@ main #hero .hero-workbench article.deck-item,
   margin: 0;
 }
 
-.Manifesto-title span {
+.manifesto-title span {
   display: block;
   color: var(--red-600);
   margin-top: 0.15em;
 }
 
-.Manifesto-title::after {
+.manifesto-title::after {
   content: "PHILOSOPHY // ZERO-BLOAT ARCHITECTURE";
   display: block;
   margin-top: 2rem;
@@ -861,7 +862,7 @@ main #hero .hero-workbench article.deck-item,
   border-top: 1px solid var(--line);
 }
 
-.Manifesto-lead {
+.manifesto-lead {
   font-family: "Lato", var(--font-heading);
   font-size: clamp(1.375rem, 2.2vw, 1.75rem);
   font-weight: 700;
@@ -871,7 +872,7 @@ main #hero .hero-workbench article.deck-item,
   letter-spacing: -0.015em;
 }
 
-.Manifesto-deep {
+.manifesto-deep {
   font-size: 1.125rem;
   line-height: 1.75;
   color: var(--muted);
@@ -893,7 +894,7 @@ main #hero .hero-workbench article.deck-item,
   }
 }
 
-main #Manifesto .swiss-ledger article.ledger-item,
+main #manifesto .swiss-ledger article.ledger-item,
 .ledger-item {
   margin: 0;
   border-radius: 0;
@@ -905,20 +906,20 @@ main #Manifesto .swiss-ledger article.ledger-item,
 }
 
 @media (max-width: 41.99rem) {
-  main #Manifesto .swiss-ledger article.ledger-item:not(:first-child),
+  main #manifesto .swiss-ledger article.ledger-item:not(:first-child),
   .ledger-item:not(:first-child) {
     border-top: 1px solid var(--line);
   }
 }
 
 @media (min-width: 42rem) {
-  main #Manifesto .swiss-ledger article.ledger-item:nth-child(2n),
+  main #manifesto .swiss-ledger article.ledger-item:nth-child(2n),
   .ledger-item:nth-child(2n) {
     border-left: 1px solid var(--line);
     padding-left: 1.75rem;
     padding-right: 0;
   }
-  main #Manifesto .swiss-ledger article.ledger-item:nth-child(n+3),
+  main #manifesto .swiss-ledger article.ledger-item:nth-child(n+3),
   .ledger-item:nth-child(n+3) {
     border-top: 1px solid var(--line);
   }
@@ -957,7 +958,7 @@ main #Manifesto .swiss-ledger article.ledger-item,
   text-align: left;
 }
 
-.Manifesto-quote {
+.manifesto-quote {
   margin-top: 2.5rem;
   background: var(--lavender);
   border-left: 4px solid var(--red-600);
@@ -965,7 +966,7 @@ main #Manifesto .swiss-ledger article.ledger-item,
   border-radius: 0 16px 16px 0;
 }
 
-.Manifesto-quote p {
+.manifesto-quote p {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
@@ -975,7 +976,7 @@ main #Manifesto .swiss-ledger article.ledger-item,
   margin-bottom: 0.5rem;
 }
 
-.Manifesto-quote cite {
+.manifesto-quote cite {
   display: block;
   font-family: var(--font-body);
   font-size: 0.95rem;
