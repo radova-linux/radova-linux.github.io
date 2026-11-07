@@ -1044,7 +1044,8 @@ main #fitur .fitur-matrix article.fitur-card {
 @media (min-width: 56rem) {
   .fitur-matrix {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(2, calc(50% - 1.25rem));
+    /* grid-template-columns: repeat(12, 1fr); */
     gap: 1.25rem;
     align-items: stretch;
   }
@@ -1056,15 +1057,15 @@ main #fitur .fitur-matrix article.fitur-card {
   }
 
   /* KARTU B, C, D, E: Asymmetric Interlocking Brick */
-  .card-b {
+  /* .card-b {
     grid-column: 6 / 10;
     grid-row: 1 / 2;
-  }
-
+  } */
+/* 
   .card-c {
     grid-column: 10 / 13;
     grid-row: 1 / 2;
-  }
+  } */
 
   .card-d {
     grid-column: 6 / 9;
