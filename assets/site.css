@@ -853,7 +853,7 @@ main #hero .hero-workbench article.deck-item,
 }
 
 .manifesto-title::after {
-  content: "PHILOSOPHY // ZERO-BLOAT ARCHITECTURE";
+  content: "PHILOSOPHY // ZERO-TRUST ARCHITECTURE";
   display: block;
   margin-top: 2rem;
   font-family: var(--font-mono);
