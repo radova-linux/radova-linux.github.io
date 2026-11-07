@@ -44,7 +44,7 @@
   --red-700: #BB080B;
   --red-600: #DB000F;
   --red-500: #FF0000;
-  --blue: #0B2E8D;
+  --blue: #0035c6;
   --lavender: #F7F6FF;
   --white: #FFFFFF;
   --muted: #5b5a78;
@@ -655,6 +655,7 @@ a.btn, button.btn, .copy-btn {
   letter-spacing: -0.03em;
   color: var(--red-900);
   margin: 0;
+  text-transform: capitalize;
 }
 
 .hero-split-left h1 span {
@@ -875,6 +876,7 @@ main #hero .hero-workbench article.deck-item,
   color: var(--red-900);
   margin-bottom: 1.5rem;
   letter-spacing: -0.015em;
+  text-transform: capitalize;
 }
 
 .manifesto-deep {
