@@ -637,24 +637,25 @@ a.btn, button.btn, .copy-btn {
   }
 
   .hero-split-left {
-    grid-column: 1 / 8;
+    grid-column: 1 / 6;
   }
 
   .hero-split-right {
-    grid-column: 8 / 13;
+    grid-column: 6 / 13;
     border-left: 1px solid var(--red-600);
     padding-left: clamp(1.5rem, 2.5vw, 2.5rem);
   }
 }
 
-.hero-split-left h1 {
+.hero-split-right h1 {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  font-size: clamp(1.5rem, 5.5vw, 3rem);
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.03em;
   color: var(--red-900);
   margin: 0;
+  margin-bottom: 1.75rem;
   text-transform: capitalize;
 }
 
