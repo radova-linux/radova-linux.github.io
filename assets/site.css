@@ -1029,6 +1029,7 @@ main #manifesto .swiss-ledger article.ledger-item,
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin: 0;
+  margin-top: 2rem;
 }
 
 .fitur-matrix {
