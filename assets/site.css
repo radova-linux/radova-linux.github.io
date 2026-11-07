@@ -998,7 +998,7 @@ main #manifesto .swiss-ledger article.ledger-item,
 }
 
 .fitur-head {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
@@ -1016,6 +1016,9 @@ main #manifesto .swiss-ledger article.ledger-item,
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--red-900);
+  width: 70%;
+  display: block;
+  text-transform: capitalize;
 }
 
 .fitur-head-meta {
