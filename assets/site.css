@@ -1476,7 +1476,7 @@ main #fitur .fitur-matrix article.fitur-card {
   font-size: clamp(2.25rem, 4vw, 3.25rem);
   font-weight: 900;
   line-height: 1.15;
-  color: var(--red-900);
+  color: var(--red-500);
   margin-bottom: 1rem;
 }
 
