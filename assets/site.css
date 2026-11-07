@@ -790,7 +790,7 @@ main #hero .hero-workbench article.deck-item,
 #manifesto {
   background: #FFFFFF;
   border-bottom: 1px solid var(--line);
-  padding-block: clamp(5rem, 9vw, 7.5rem);
+  padding-block: clamp(2rem, 1vw, 5.5rem);
 }
 
 #manifesto::before {
