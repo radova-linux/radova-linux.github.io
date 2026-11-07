@@ -1321,7 +1321,7 @@ main #fitur .fitur-matrix article.fitur-card {
 .card-dock code {
   display: block;
   font-size: 13px;
-  overflow-x: auto;
+  /* overflow-x: auto; */
   white-space: nowrap;
   color: inherit;
 }
