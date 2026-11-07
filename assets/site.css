@@ -844,6 +844,7 @@ main #hero .hero-workbench article.deck-item,
   letter-spacing: -0.03em;
   color: var(--red-900);
   margin: 0;
+  text-transform: capitalize;
 }
 
 .manifesto-title span {
@@ -977,6 +978,7 @@ main #manifesto .swiss-ledger article.ledger-item,
   color: var(--red-900);
   line-height: 1.5;
   margin-bottom: 0.5rem;
+  text-transform: capitalize;
 }
 
 .manifesto-quote cite {
