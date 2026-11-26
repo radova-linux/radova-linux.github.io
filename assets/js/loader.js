@@ -38,6 +38,6 @@
   });
 
   try {
-    if (localStorage.getItem("radova-theme") === "dark" || localStorage.getItem("radova-lang") === "id") load();
+    if (localStorage.getItem("radova-theme") === "dark") load();
   } catch (_) {}
 })();
