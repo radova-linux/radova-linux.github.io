@@ -1,1 +1,0 @@
-addEventListener("load",function(){var b=document.querySelector(".hero-media[data-img]");if(!b)return;var i=new Image();i.src=b.dataset.img;i.alt=b.dataset.alt||"";i.width=800;i.height=450;i.decoding="async";i.fetchPriority="high";requestAnimationFrame(function(){b.appendChild(i)})});

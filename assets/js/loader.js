@@ -1,4 +1,4 @@
-// Loads css/fonts.css, home.bundle.js, and htmx.min.js on first interaction.
+// Loads css/fonts.css and home.bundle.js on first interaction.
 (function () {
   "use strict";
   var base = document.currentScript.src;
@@ -20,9 +20,6 @@
     if (loaded) return;
     loaded = true;
     add("link", { rel: "stylesheet", href: new URL("../css/fonts.css", base).href });
-    function injectHtmx() { add("script", { src: new URL("htmx.min.js", base).href }); }
-    if (document.readyState === "complete") injectHtmx();
-    else addEventListener("load", injectHtmx, { once: true });
     add("script", {
       src: new URL("home.bundle.js?v=5", base).href,
       onload: function () {
