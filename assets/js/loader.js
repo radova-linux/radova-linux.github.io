@@ -3,6 +3,7 @@
   "use strict";
   var base = document.currentScript.src;
   var loaded = false;
+  var ready = false;
   var pending = null;
 
   function add(tag, attrs) {
@@ -13,7 +14,7 @@
 
   function onClick(e) {
     var t = e.target.closest && e.target.closest("#theme-toggle, #lang-toggle, .nav-toggle, #about-menu-btn, .d-content-back");
-    if (t) pending = t;
+    if (t && !ready) pending = t;
   }
 
   function load() {
@@ -23,8 +24,9 @@
     add("script", {
       src: new URL("home.bundle.js?v=5", base).href,
       onload: function () {
+        ready = true;
         document.removeEventListener("click", onClick, true);
-        if (pending) pending.click();
+        if (pending) { var p = pending; pending = null; p.click(); }
       }
     });
   }
