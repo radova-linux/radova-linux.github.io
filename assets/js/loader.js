@@ -22,7 +22,7 @@
     loaded = true;
     add("link", { rel: "stylesheet", href: new URL("../css/fonts.css", base).href });
     add("script", {
-      src: new URL("home.bundle.js?v=5", base).href,
+      src: new URL("home.bundle.js?v=6", base).href,
       onload: function () {
         ready = true;
         document.removeEventListener("click", onClick, true);
