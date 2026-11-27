@@ -20,7 +20,7 @@
   function load() {
     if (loaded) return;
     loaded = true;
-    add("link", { rel: "stylesheet", href: new URL("../css/fonts.css", base).href });
+    // ponytail: fonts.css already loaded non-blocking in <head>
     add("script", {
       src: new URL("home.bundle.js?v=6", base).href,
       onload: function () {
